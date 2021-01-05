@@ -7,6 +7,7 @@
 
 
 ## Ideas
+Update BGINFO script to display less information. 
 Powershell script that prepares an existing VM into packer. 
 Creating a VM with all the troubleshooting tools for creating CyberArk profiles
 Update provisioning script to install latest version of vmwarebox tools
