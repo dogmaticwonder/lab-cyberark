@@ -279,7 +279,7 @@ Vagrant.configure("2") do |config|
       vb.gui = true
       vb.name = "vault"
       vb.default_nic_type = "82545EM"
-      vb.customize ["modifyvm", :id, "--memory", 2048]
+      vb.customize ["modifyvm", :id, "--memory", 1536]
       vb.customize ["modifyvm", :id, "--cpus", 1]
       vb.customize ["modifyvm", :id, "--vram", "32"]
       vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
@@ -313,7 +313,7 @@ Vagrant.configure("2") do |config|
       vb.gui = true
       vb.name = "pvwa"
       vb.default_nic_type = "82545EM"
-      vb.customize ["modifyvm", :id, "--memory", 2048]
+      vb.customize ["modifyvm", :id, "--memory", 1536]
       vb.customize ["modifyvm", :id, "--cpus", 1]
       vb.customize ["modifyvm", :id, "--vram", "32"]
       vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
@@ -347,7 +347,7 @@ Vagrant.configure("2") do |config|
       vb.gui = true
       vb.name = "cpm"
       vb.default_nic_type = "82545EM"
-      vb.customize ["modifyvm", :id, "--memory", 2048]
+      vb.customize ["modifyvm", :id, "--memory", 1536]
       vb.customize ["modifyvm", :id, "--cpus", 1]
       vb.customize ["modifyvm", :id, "--vram", "32"]
       vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
