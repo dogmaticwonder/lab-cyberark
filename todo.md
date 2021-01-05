@@ -7,14 +7,16 @@
 
 
 ## Ideas
+Powershell script that prepares an existing VM into packer. 
+Creating a VM with all the troubleshooting tools for creating CyberArk profiles
 Update provisioning script to install latest version of vmwarebox tools
 Provisioning scripts for different server roles (i.e. Vault, PVWA, CPM)
-Automatically update DNS/Hostfile with proper names
+Automatically update DNS/Host file with proper names
 Answer files for CyberArk installs 
 Automatic configuration of IIS on PVWA, including self-signed certificate 
-Improve the domain join powershell script 
+Improve the domain join power shell script 
 Automatically disable all firewalls
-Removing the bad keysequences within vmwarebox that prevents accidently rebooting vm. [Documentation](https://www.virtualbox.org/manual/ch08.html)
+Removing the bad key sequences within vmwarebox that prevents accidentally rebooting vm. [Documentation](https://www.virtualbox.org/manual/ch08.html)
 Figure out how/why two network adapters are configured by scripts
 Automatically generate a report that illustrates architecture of lab and credentials. 
 Sequencing of booting up architecture
