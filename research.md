@@ -7,3 +7,8 @@ vagrant package --base vault --output cyberark_vault.box
 ==> vault: Exporting VM...
 ==> vault: Compressing package to: /Users/markthomsen/lab.markthomsen.org/CyberArk/private_software/boxes/cyberark_vault.box
 ```
+
+* Troubleshooting Tip: On installing PVWA
+- Install as adminstrator
+- Do not set host headers in the binding configuration for the site
+- Self-signed certificates is OK.
