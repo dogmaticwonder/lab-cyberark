@@ -15,7 +15,9 @@ __Release 1__
    - Flat network
    - No hardening anywhere
    - Default install
-   - No special drive partioning 	
+   - No special drive partioning 
+   - Boxes for each component created and uploaded
+
 
 
 __Release 2__
@@ -23,5 +25,10 @@ __Release 2__
 - Add PSM for SSH component 
 - Add very basic configuration that can be built upon
 - Windows end-point has development tools
+- Create entries in hosts file for components
+
+
+__Release 3__
+- Vagrantfile revised to include downloading of pre-built boxes from a password-protected URL
 
 
