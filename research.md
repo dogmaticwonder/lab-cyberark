@@ -29,3 +29,10 @@ A. Go here to learn how to configure BGinfo.exe [Link](https://www.howtogeek.com
 [PVWA Server Role Requirements](https://docs.cyberark.com/Product-Doc/OnlineHelp/PAS/Latest/en/Content/PAS%20INST/Before-Password-Vault-Web-Access-Installation.htm?tocpath=Installation%7CInstalling%20the%20PAS%C2%A0Solution%7CManual%20Installation%7CEnterprise%20Password%20Vault%7CInstall%20the%20PVWA%7C_____2)
 
 https://github.com/hollodotme/Helpers/blob/master/Tutorials/vagrant/self-hosted-vagrant-boxes-with-versioning.md
+
+## Scratch pad
+########################
+### Ubuntu end-points ###
+########################
+config.vm.box = "bento/ubuntu-18.04"
+config.vm.box = "ubuntu/trusty64"
