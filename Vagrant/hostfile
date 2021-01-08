@@ -1,0 +1,13 @@
+# CyberArk Components
+10.130.50.1		gw 			gw.cyberark.lab
+10.130.50.2		vault 		vault.cyberark.lab
+10.130.50.3		cpm 		cpm.cyberark.lab
+10.130.50.10	pvwa		pvwa.cyberark.lab
+
+# Endpoints
+10.130.50.51	dc 			dc.cyberark.lab
+10.130.50.75	ubuntu 		ubuntu.cyberark.lab
+10.130.50.76 	centos7 	centos7.cyberark.lab
+10.130.50.77	sunos11     sunos11.cyberark.lab
+10.130.50.80 	win10 		win10.cyberark.lab
+10.130.50.81	win2016		win2016.cyberark.lab
