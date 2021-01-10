@@ -1,5 +1,3 @@
-Vagrant.configure("2") do |config|
-
 nodes = [
   { :hostname => 'vault',     :ip => '10.130.50.2'  },
   { :hostname => 'cmp',       :ip => '10.130.50.3'  },
@@ -11,6 +9,8 @@ nodes = [
   { :hostname => 'win2016',   :ip => '10.130.50.81' },
   { :hostname => 'dns',       :ip => '8.8.8.8'      }
 ]
+
+Vagrant.configure("2") do |config|
 
 #############
 ### VAULT ###
@@ -38,3 +38,4 @@ nodes = [
       vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
     end
   end
+end
