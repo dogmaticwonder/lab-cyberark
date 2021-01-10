@@ -11,3 +11,7 @@
 10.130.50.77	sunos11     sunos11.cyberark.lab
 10.130.50.80 	win10 		win10.cyberark.lab
 10.130.50.81	win2016		win2016.cyberark.lab
+
+# Hosting platforms
+10.130.50.250	host1
+10.130.50.251	host2
