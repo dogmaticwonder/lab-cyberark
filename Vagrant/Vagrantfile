@@ -7,7 +7,9 @@ nodes = [
   { :hostname => 'solaris11', :ip => '10.130.50.77' },
   { :hostname => 'win10',     :ip => '10.130.50.80' },
   { :hostname => 'win2016',   :ip => '10.130.50.81' },
-  { :hostname => 'dns',       :ip => '8.8.8.8'      }
+  { :hostname => 'dns',       :ip => '8.8.8.8'      }, 
+  { :hostname => 'host1',     :ip => '10.130.50.250'}, 
+  { :hostname => 'host2',     :ip => '10.130.50.251'}
 ]
 
 Vagrant.configure("2") do |config|
@@ -17,22 +19,80 @@ Vagrant.configure("2") do |config|
 #############
 
   config.vm.define "vault" do |cfg|
-    cfg.vm.url "file:///~/CyberArk/private_software/boxes/cyberark_vault.box"
+    cfg.vm.box = "vault"
     cfg.vm.hostname = "vault"
-    cfg.vm.gui = false
-    cfg.vm.boot_timeout = 600
-    cfg.winrm.transport = :plaintext
     cfg.vm.communicator = "winrm"
-    cfg.vm.network :public_network, ip: nodes[:vault], dns: nodes[:dns]
+    cfg.vm.network :public_network, bridge: [ "en0: Wi-Fi (AirPort)", "en1: Wi-Fi (AirPort)" ], ip: "10.130.50.2", dns: "8.8.8.8"
+    cfg.vm.provider "virtualbox" do |vb, override|
+      vb.gui = false
+      vb.name = "vault"
+      vb.memory = 1250
+      vb.cpus = 1
+      vb.default_nic_type = "82545EM"
+      vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
+    end
+  end
 
-    cfg.vm.provision "shell", inline: 'cscript c:\windows\system32\slmgr.vbs /dlv', privileged: false
+#############
+### CPM ###
+#############
+
+ config.vm.define "cpm" do |cfg|
+    cfg.vm.box = "cpm"
+    cfg.vm.hostname = "cpm"
+    cfg.vm.communicator = "winrm"
+    cfg.vm.network :public_network, bridge: [ "en0: Wi-Fi (AirPort)", "en1: Wi-Fi (AirPort)" ], ip: "10.130.50.3", dns: "8.8.8.8"
+    cfg.vm.provider "virtualbox" do |vb, override|
+      vb.gui = false
+      vb.name = "cpm"
+      vb.memory = 1250
+      vb.cpus = 1
+      vb.default_nic_type = "82545EM"
+      vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
+    end
+  end
+
+#############
+### PVWA ###
+#############
+
+ config.vm.define "pvwa" do |cfg|
+    cfg.vm.box = "pvwa"
+    cfg.vm.hostname = "pvwa"
+    cfg.vm.communicator = "winrm"
+    cfg.vm.network :public_network, bridge: [ "en0: Wi-Fi (AirPort)", "en1: Wi-Fi (AirPort)" ], ip: "10.130.50.10", dns: "8.8.8.8"
+    cfg.vm.provider "virtualbox" do |vb, override|
+      vb.gui = false
+      vb.name = "pvwa"
+      vb.memory = 1250
+      vb.cpus = 1
+      vb.default_nic_type = "82545EM"
+      vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]
+    end
+  end
+
+#######################################################
+### Windows 10 Endpoint - "jacqinthebox/windows10"  ###
+#######################################################
+
+  config.vm.define "win10" do |cfg|
+    cfg.vm.box = "jacqinthebox/windows10"
+    cfg.vm.hostname = "win10"
+    cfg.vm.communicator = "winrm"
+    cfg.vm.network :public_network, bridge: [ "en0: Wi-Fi (AirPort)", "en1: Wi-Fi (AirPort)" ], ip: "10.130.50.80", dns: "8.8.8.8"
 
     cfg.vm.provider "virtualbox" do |vb, override|
       vb.gui = true
-      vb.name = "vault"
+      vb.name = "win10"
+      vb.memory = 1024
+      vb.cpus = 1
       vb.default_nic_type = "82545EM"
-      vb.customize ["modifyvm", :id, "--memory", 1536]
-      vb.customize ["modifyvm", :id, "--cpus", 1]
       vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       vb.customize ["setextradata", "global", "GUI/SuppressMessages", "all" ]

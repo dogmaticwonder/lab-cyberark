@@ -15,13 +15,23 @@ __Release 1__
 - Vagrant boxes were created for each component and uploaded to [my GSA drive](https://drive.google.com/drive/u/1/folders/1wBNLx2AZbOvOkNuI4pQQx0-74RvYX14c)
 - This concludes release 1
 
-__Release 2__
+__Release 1.1__
 - Expand architecture to include a Windows and Linux end-point
-- Windows end-point has development tools
-- Create entries in hosts file for components
+- Bridged networking for splitting across multiple hosting platforms 
+   -- Hosting system modifications not included (i.e. adding a new adapter to access the lab)
+
+
+
+
 
 __Release 3__
+- Windows end-point has development tools
+- Implement this style of Vagrant file || https://gist.github.com/dlutzy/2469037
+- Convert Vagrant file to new format and implement some of the ruby stuff here:https://github.com/patrickdlee/vagrant-examples/blob/master/example6/Vagrantfile
 - Vagrantfile revised to include downloading of pre-built boxes from a password-protected URL
+- Create a shell script that wraps Vagrant into different parts of the lab (i.e. core, vs end-points)
 - Add PSM for SSH component 
 - Add very basic configuration that can be built upon
 - Revise Vagrantfile to pull from 
+- Create entries in hosts file for components
+- Approach to running lab across multiple Vagrant hosts

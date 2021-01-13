@@ -1,10 +1,11 @@
 # Git Ignore Syntax
 # https://git-scm.com/docs/gitignore
-
 .DS_Store
-private_software/
+private_software/*
 archive/
 resources/
 scripts/
 .vagrant/
 DetectionLab/
+todo.md
+research.md

@@ -1,6 +1,32 @@
+## CyberArk Specific things
+- Onboard a server so the root password is rotated 
+- Manage other account passwords
+- Manually register/onboard
+- Use password upload feature
+- Upload and configure a new platform
+- [Procedure for starting Vault with external "operator CD"](https://docs.cyberark.com/Product-Doc/OnlineHelp/PAS/Latest/en/Content/PASIMP/Working-with-the-Server-Interface.htm?tocpath=Administration%7CComponents%7CDigital%20Vault%7COperate%20the%20CyberArk%20Vault%7C_____1)
+
+
+
+
 ## Issues
+Network interface on ubuntu isn't coming up. Configure networking
+Automate the configuring of network interfaces in end-points
+Network not configuring 
+Trash can not empty when box created
+Desktop not refreshing 
+Firewall is still on
+
+
+
+
 
 ## Ideas
+preference for taskbar and start-menu setups 
+
+
+
+
 Low
 - Update provisioning script to install latest version of vmwarebox tools
 - Update BGINFO script to display less information. 
